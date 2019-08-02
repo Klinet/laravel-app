@@ -1,0 +1,12 @@
+//container does not start:
+kevin@awabi:~$ sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/snap*
+
+rebuild:
+docker-compose up -d --build --no-deps app
+docker-compose up -d --build app
+
+//This package requires php ^7.3 but your PHP version (7.2.19) does not satisfy that requirement.
+composer install --ignore-platform-reqs
+
+if env updated
+//docker-compose exec app php artisan config:cache
